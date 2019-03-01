@@ -7,14 +7,28 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
   end
-
-  get '/articles/new' do
-   erb :new
-  end
+    get'/' do 
+    erb :index
+    end
+    get '/articles/new' do
+    erb :new
+    end
 
     post '/articles' do 
-    binding.pry
-end 
+     # binding.pry
+      Article.create(params)
+     redirect  '/articles/:id'
+    end
+    
+    get'/articles'  do
+    @articles = Article.all
+     erb :index 
+    end
+    get'/articles/:id'  do
+     @article = Article.find(params[:id])
+     erb :show 
+    end
+
 
 
 
