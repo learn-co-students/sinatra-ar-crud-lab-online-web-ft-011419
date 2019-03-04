@@ -1,5 +1,7 @@
 hi you have submitted this form great 
 
 <%@articles.each do |art|%>
-<a href = "<%=art.id%>"> <%art.title%>   </a> 
+<a href = "/articles/<%=art.id%>">   </a> 
+<%art.title%>
+
 <%end%>
