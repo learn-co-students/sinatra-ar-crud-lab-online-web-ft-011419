@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
 
   delete '/articles/:id/delete' do
     Article.delete(params["id"])
+    erb :new
   end
 
   post '/articles' do
