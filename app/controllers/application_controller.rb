@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    redirect to articles
   end
 
   get '/articles/new' do
@@ -33,6 +34,6 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  
+
 
 end
