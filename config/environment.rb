@@ -20,3 +20,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app'
+
+Rack::MethodOverride
